@@ -25,10 +25,11 @@ export default function Header() {
         if (user) {
             return (
                 <div className="profileMenu mx-3 d-flex align-items-center gap-2">
+                    
                     <Link to="/cart">
                         <i className="bi bi-cart3 fs-3 mx-3"></i>
                     </Link>
-                    <Link to="/profile">
+                    <Link to="/profile" style={{ color: 'white', textDecoration: 'none' }}>
                         <i className="bi bi-person-circle fs-2"></i>
                     </Link>
                     <span className="username">{user.name}</span>
@@ -37,7 +38,7 @@ export default function Header() {
                     </button>
                 </div>
             );
-        }else {
+        } else {
             return (
                 <div className="profileMenu mx-3 d-flex align-items-center gap-2">
                     <Link className='bg-danger text-light p-2 rounded' to='/login'>Login</Link>
@@ -71,7 +72,7 @@ export default function Header() {
                                 <Link to={"/about"}>About</Link>
                                 {!user && <Link to={"/register"}>Register</Link>}
                                 <Link to={"/cart"} className='btn btn-white'>Cart</Link>
-                            
+
                             </Nav>
                             <Form className="d-flex">
                                 <Form.Control
